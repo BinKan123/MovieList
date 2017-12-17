@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kanbi.movielist.activity.movie_details">
+
+
+
+    <include
+        layout="@layout/content_movie_details"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/include" />
+
+
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="303dp"
+        android:layout_height="205dp"
+        app:srcCompat="@drawable/bb"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="203dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textAlignment="textStart"
+        android:textColor="?android:attr/colorPrimaryDark"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poster" />
+
+    <TextView
+        android:id="@+id/releaseTime"
+        android:layout_width="135dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/overview"
+        android:layout_width="247dp"
+        android:layout_height="240dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/poster"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.453"
+        tools:layout_editor_absoluteX="318dp"
+        app:layout_constraintHorizontal_bias="0.512" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintRight_toRightOf="@+id/poster"
+        app:layout_constraintTop_toTopOf="@+id/title" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="23dp"
+        android:layout_height="19dp"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        app:layout_constraintRight_toLeftOf="@+id/rating"
+        android:layout_marginRight="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rating"
+        android:layout_marginBottom="0dp" />
+
+    <TextView
+        android:id="@+id/adult"
+        android:layout_width="77dp"
+        android:layout_height="22dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="viewEnd"
+        android:textStyle="bold|italic"
+        app:layout_constraintRight_toRightOf="@+id/rating"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+
+</android.support.constraint.ConstraintLayout>
