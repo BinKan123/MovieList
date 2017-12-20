@@ -1,5 +1,6 @@
 package com.example.kanbi.movielist.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -37,7 +38,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         public ImageView poster;
         public TextView rating;
 
-
         public ViewHolder(View itemView) {
             super(itemView);
 
@@ -45,9 +45,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             poster=(ImageView) itemView.findViewById(R.id.poster);
             rating=(TextView) itemView.findViewById(R.id.ratingNr);
         }
-
     }
-
 
     @Override
     public MovieAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
@@ -78,20 +76,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 intent.putExtra("overview_key",item.getOverview());
                 context.startActivity(intent);
 
+                //slide animation for intent transition
+                ((Activity)  context).overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
+
             }
     });
-       /* holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               /* Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(("https://keep.google.com/u/1/#home")));*/
-             /*   Intent intent = new Intent(context, movie_details.class);
-                intent.putExtra("item_key",i);
-
-                context.startActivity(intent);
-
-            }
-        });*/
     }
 
     @Override
@@ -99,7 +89,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         return movieList.size();
     }
 
-
+    //for search function
     @Override
     public Filter getFilter() {
         return new Filter() {
@@ -110,7 +100,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
                 if (charString.isEmpty()) {
 
-                    // to show a list of earlier keywords
                 } else {
 
                     ArrayList<MovieModel> filteredList = new ArrayList<>();

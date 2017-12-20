@@ -7,21 +7,6 @@
     tools:context="com.example.kanbi.movielist.activity.movie_details">
 
 
-
-    <include
-        layout="@layout/content_movie_details"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:id="@+id/include" />
-
-
     <ImageView
         android:id="@+id/poster"
         android:layout_width="303dp"
