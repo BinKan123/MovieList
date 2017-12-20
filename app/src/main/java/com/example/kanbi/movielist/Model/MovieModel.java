@@ -11,56 +11,76 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.R.attr.name;
-//import static com.example.kanbi.movielist.Model.MovieModel.TABLE_NAME;
+import static com.example.kanbi.movielist.Model.MovieModel.TABLE_NAME;
 
 /**
  * Created by kanbi on 14/12/2017.
  */
-//@Entity(tableName = TABLE_NAME)
+@Entity(tableName = TABLE_NAME)
 public class MovieModel {
 
+    public static final String TABLE_NAME = "Movies";
 
+    @ColumnInfo(name="adult")
     @SerializedName("adult")
     private boolean adult;
 
+    @ColumnInfo(name="backdrop_path")
     @SerializedName("backdrop_path")
     private String backdrop_path;
 
+    @Ignore
     @SerializedName("genre_ids")
     private List<Integer> genre_ids=new ArrayList<>();
 
+    @PrimaryKey
+    @ColumnInfo(name="id")
     @SerializedName("id")
     private Integer id;
 
+    @ColumnInfo(name="original_language")
     @SerializedName("original_language")
     private String original_language;
 
+    @ColumnInfo(name="original_title")
     @SerializedName("original_title")
     private String original_title;
 
+    @ColumnInfo(name="overview")
     @SerializedName("overview")
     private String overview;
 
+    @ColumnInfo(name="popularity")
     @SerializedName("popularity")
     private double popularity;
 
+    @ColumnInfo(name="posterPath")
     @SerializedName("poster_path")
     private String posterPath;
 
+    @ColumnInfo(name="release_date")
     @SerializedName("release_date")
     private String release_date;
 
+    @ColumnInfo(name="title")
     @SerializedName("title")
     private String title;
 
+    @ColumnInfo(name="video")
     @SerializedName("video")
     private boolean video;
 
+    @ColumnInfo(name="vote_average")
     @SerializedName("vote_average")
     private double vote_average;
 
+    @ColumnInfo(name="vote_count")
     @SerializedName("vote_count")
     private String vote_count;
+
+    public MovieModel(){
+
+    }
 
     public MovieModel(boolean adult, String backdrop_path, List<Integer> genre_ids, Integer id, String original_language, String original_title, String overview, double popularity, String posterPath, String release_date, String title, boolean video, double vote_average, String vote_count) {
         this.adult = adult;
@@ -193,74 +213,3 @@ public class MovieModel {
 }
 
 
-//codes below are saved for experimenting Room persistent
-
-/*public static final String TABLE_NAME = "Movies";
-
-    @PrimaryKey(autoGenerate=true)
-    private int movieId;
-
-    public int getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(int movieId) {
-        this.movieId = movieId;
-    }
-
-    @ColumnInfo(name="adult")
-    @SerializedName("adult")
-    private boolean adult;
-
-    @ColumnInfo(name="backdrop_path")
-    @SerializedName("backdrop_path")
-    private String backdrop_path;
-
-    @Ignore
-    @SerializedName("genre_ids")
-    private List<Integer> genre_ids=new ArrayList<>();
-
-    @ColumnInfo(name="id")
-    @SerializedName("id")
-    private Integer id;
-
-    @ColumnInfo(name="original_language")
-    @SerializedName("original_language")
-    private String original_language;
-
-    @ColumnInfo(name="original_title")
-    @SerializedName("original_title")
-    private String original_title;
-
-    @ColumnInfo(name="overview")
-    @SerializedName("overview")
-    private String overview;
-
-
-    @ColumnInfo(name="popularity")
-    @SerializedName("popularity")
-    private double popularity;
-
-    @ColumnInfo(name="posterPath")
-    @SerializedName("poster_path")
-    private String posterPath;
-
-    @ColumnInfo(name="release_date")
-    @SerializedName("release_date")
-    private String release_date;
-
-    @ColumnInfo(name="title")
-    @SerializedName("title")
-    private String title;
-
-    @ColumnInfo(name="video")
-    @SerializedName("video")
-    private boolean video;
-
-    @ColumnInfo(name="vote_average")
-    @SerializedName("vote_average")
-    private double vote_average;
-
-    @ColumnInfo(name="vote_count")
-    @SerializedName("vote_count")
-    private String vote_count;*/

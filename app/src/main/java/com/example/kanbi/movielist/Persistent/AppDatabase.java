@@ -8,8 +8,8 @@ import com.example.kanbi.movielist.Model.MovieModel;
 /**
  * Created by kanbi on 18/12/2017.
  */
-/*@Database(entities = {MovieModel.class},version = 1)
+@Database(entities = {MovieModel.class},version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract movieDao movieDao();
-}*/
+}

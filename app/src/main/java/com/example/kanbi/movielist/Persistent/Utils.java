@@ -19,9 +19,4 @@ public class Utils {
         return networkInfo!=null&&networkInfo.isConnectedOrConnecting();
     }
 
-    /*public static byte[] getPicByteOfArray(Bitmap bitmap){
-        ByteArrayOutputStream byteArrayInputStream=new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG,0,byteArrayOutputStream);
-        return byteArrayOutputStream.toByteArray();
-    }*/
 }

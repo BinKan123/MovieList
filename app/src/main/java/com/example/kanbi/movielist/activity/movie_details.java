@@ -1,6 +1,7 @@
 package com.example.kanbi.movielist.activity;
 
 import android.app.ActionBar;
+import android.content.Context;
 import android.hardware.input.InputManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -64,6 +65,16 @@ public class movie_details extends AppCompatActivity {
 
         //animation
         movie_details.this.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+
+        //dismiss keyboard
+        if(this.getCurrentFocus()==null||this.getCurrentFocus().getWindowToken()==null){
+            return;
+        }
+        InputMethodManager inputMethodManager=(InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        if(inputMethodManager!=null){
+            inputMethodManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),0);
+        }
     }
 
 }

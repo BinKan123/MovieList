@@ -19,6 +19,7 @@ import com.example.kanbi.movielist.activity.movie_details;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kanbi on 14/12/2017.
@@ -26,9 +27,9 @@ import java.util.ArrayList;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> implements Filterable {
 
-    private ArrayList<MovieModel> movieList;
+    private List<MovieModel> movieList;
 
-    public MovieAdapter(ArrayList<MovieModel> List) {
+    public MovieAdapter(List<MovieModel> List) {
         movieList = List;
     }
 
@@ -64,6 +65,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         final Context context = holder.itemView.getContext();
         Picasso.with(context).load("https://image.tmdb.org/t/p/w500"+item.getPosterPath()).into(holder.poster);
 
+        //get value then send as intent
         holder.poster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,8 +80,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
                 //slide animation for intent transition
                 ((Activity)  context).overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-
-
             }
     });
     }
@@ -102,7 +102,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
                 } else {
 
-                    ArrayList<MovieModel> filteredList = new ArrayList<>();
+                    List<MovieModel> filteredList = new ArrayList<>();
 
                     for (MovieModel search : movieList) {
 
@@ -121,7 +121,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                movieList = (ArrayList<MovieModel>) filterResults.values;
+                movieList = (List<MovieModel>) filterResults.values;
                 notifyDataSetChanged();
             }
         };
